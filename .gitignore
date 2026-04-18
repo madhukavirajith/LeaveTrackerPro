@@ -1,0 +1,43 @@
+# Visual Studio
+.vs/
+.vscode/
+*.sln.user
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+
+# Project files
+*.csproj.user
+*.slnx
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Local settings
+Documents/LeaveTrackerPro/
+appsettings.local.json
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# App icon placeholder
+app.ico
