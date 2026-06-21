@@ -1,136 +1,141 @@
 # LeaveTrackerPro
 
-A modern, lightweight leave and absence management application built with ASP.NET Core (.NET 8).
+**A simple and efficient leave management system for your organization.**
 
-Badges
-- Build: ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-- .NET: ![.NET](https://img.shields.io/badge/.NET-8.0-blue)
-- License: ![License](https://img.shields.io/badge/license-MIT-lightgrey)
+Manage employee time off, approvals, and leave balances all in one place.
 
-Table of Contents
-- About
-- Key Features
-- Tech Stack
-- Quick Start
-  - Prerequisites
-  - Clone
-  - Configuration
-  - Database (EF Core)
-  - Run
-  - Tests
-  - Docker
-- Deployment
-- Environment Variables / appsettings
-- Contributing
-- License
-- Contact
+---
 
-About
+## What is LeaveTrackerPro?
 
-LeaveTrackerPro helps organizations manage employee leave requests, approvals, balances, and reporting with minimal setup. It is designed to be extensible and deployable on-premises or to cloud providers.
+LeaveTrackerPro is a desktop application that makes it easy for companies to handle employee leave requests. Whether it's vacation days, sick leave, or any other type of absence, this app streamlines the entire process from request to approval to tracking balances.
 
-Key Features
-- Employee leave request lifecycle (Request → Approve/Reject → Cancel)
-- Manager approval workflow
-- Leave balances and accruals
-- Role-based access control (Admin / Manager / Employee)
-- Audit logging and basic reporting
-- REST API and (optional) web UI
+---
 
-Tech Stack
-- Backend: ASP.NET Core (.NET 8)
-- Data: Entity Framework Core (SQL Server, SQLite, or other EF Core provider)
-- Frontend: May include ASP.NET Core MVC or SPA (React/Vue) depending on the solution contents
-- Optional: Docker for containerized deployments
+## Who Uses It?
 
-Quick Start
+### **Employees**
+- Submit leave requests easily
+- View their leave balance
+- Track the status of past and current requests
+- See all approved leave on a calendar view
 
-Prerequisites
-- .NET 8 SDK: https://dotnet.microsoft.com/
-- SQL Server (LocalDB), SQLite, or another EF Core-supported database
-- Optional: Docker & Docker Compose
+### **Managers**
+- Review leave requests from their team
+- Approve or reject requests with notes
+- See team member availability at a glance
+- Export leave reports for planning
 
-Clone
+### **Admins**
+- Manage all users and departments
+- View company-wide leave activity
+- Configure leave types and policies
+- Access complete audit logs
+- Export data for compliance
 
+---
+
+## How It Works
+
+### **Employee Workflow**
+1. Open the app and log in
+2. Click "Submit Leave Request"
+3. Choose leave type (Vacation, Sick, etc.)
+4. Select start and end dates
+5. Add a reason (optional)
+6. Submit — your manager will see it immediately
+7. Check back for approval status
+
+### **Manager Workflow**
+1. Log in and see pending requests from your team
+2. Review each request with employee details
+3. Click "Approve" or "Reject"
+4. Add a note if needed
+5. Decision is recorded and employee is notified
+
+### **Admin Workflow**
+1. Access the "User Management" tab
+2. Add new employees, set departments, and assign roles
+3. View all leave requests across the organization
+4. Access audit logs for compliance reporting
+5. Export reports for HR records
+
+---
+
+## What's Inside
+
+### **Tech Stack**
+- **Built with:** .NET 8 (modern Microsoft framework)
+- **Database:** SQLite (lightweight, no setup needed)
+- **Interface:** Windows Desktop App (works on Windows 10+)
+- **Desktop Framework:** Windows Forms
+
+---
+
+## Get Started
+
+### **System Requirements**
+- Windows 10 or later
+- .NET 8 Runtime (included in installer)
+
+### **Install**
+
+1. Download the latest release from GitHub
+2. Run the installer
+3. Log in with your credentials (admin sets these up)
+4. Start submitting or managing requests
+
+### **For Development / Building from Source**
+
+**Prerequisites:**
+- Windows 10 or later
+- .NET 8 SDK ([download here](https://dotnet.microsoft.com/))
+- Visual Studio 2022 or VS Code (optional)
+
+**Clone and Run:**
 ```bash
 git clone https://github.com/madhukavirajith/LeaveTrackerPro.git
 cd LeaveTrackerPro
-```
-
-Configuration
-1. Copy an example settings file if present (appsettings.json.example or appsettings.Development.json.example) to appsettings.Development.json or appsettings.json.
-2. Update ConnectionStrings and any secrets (JWT keys, SMTP credentials).
-
-Example connection string (development):
-
-```
-"ConnectionStrings": {
-  "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=LeaveTrackerProDb;Trusted_Connection=True;"
-}
-```
-
-Database (EF Core)
-- If the solution contains EF Core DbContext and migrations are not committed, add an initial migration and apply it:
-
-```bash
-dotnet ef migrations add InitialCreate --project <YourDataProject> --startup-project <YourApiProject>
-dotnet ef database update --project <YourDataProject> --startup-project <YourApiProject>
-```
-
-Run (development)
-- Using CLI:
-
-```bash
-cd <ApiProjectFolder>
-dotnet restore
 dotnet run
 ```
 
-- Using Visual Studio:
-  - Open LeaveTrackerPro.slnx
-  - Set the API project as startup and run (F5)
+---
 
-Testing
-- Run tests (if present):
+## Key Features
 
-```bash
-dotnet test
-```
+✅ **Easy Leave Requests** — Submit leave in seconds  
+✅ **Smart Approvals** — Managers see and approve requests instantly  
+✅ **Leave Balances** — Auto-track remaining days by year  
+✅ **Role-Based Access** — Employees, Managers, and Admins see what they need  
+✅ **Reports & Export** — Export leave data for HR and planning  
+✅ **Audit Trail** — Complete history for compliance  
+✅ **No Setup Hassle** — Works out of the box with SQLite database  
 
-Docker (optional)
-- Build image:
+---
 
-```bash
-docker build -t leavetrackerpro:latest .
-```
+## Support & Questions
 
-- Run container:
+Found a bug? Have a feature request? Open an issue on GitHub:  
+**https://github.com/madhukavirajith/LeaveTrackerPro/issues**
 
-```bash
-docker run -e ConnectionStrings__DefaultConnection="Server=...;" -p 5000:80 leavetrackerpro:latest
-```
+---
 
-Deployment
-- Azure App Service: publish with `dotnet publish -c Release` or use GitHub Actions.
-- IIS: publish as a folder and configure site and app pool.
-- Containers: push images to a registry and deploy to AKS, ECS, or other.
+## Contributing
 
-Environment Variables & Secrets
-- Do not store secrets in source control. Use environment variables, Azure Key Vault, or GitHub Secrets for:
-  - Connection strings
-  - JWT signing keys
-  - SMTP credentials
+We welcome contributions! If you'd like to help:
 
-Contributing
-- Open issues for bugs or feature requests.
-- Fork the repo, create a feature branch, and open a pull request.
-- Run tests and follow existing code style.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-idea`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push to the branch: `git push origin feature/your-idea`
+5. Open a Pull Request
 
-License
-This repository does not include an explicit license file. If you intend to publish under MIT or another license, add a LICENSE file to the repo.
+---
 
-Contact
-Repository: https://github.com/madhukavirajith/LeaveTrackerPro
+## License
 
-Acknowledgements
-- Built with .NET and EF Core. Contributions are welcome.
+This project is available for use. Check the repository for licensing details.
+
+---
+
+**Made to make leave management simple and stress-free. 🎉**
