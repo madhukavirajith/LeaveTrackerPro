@@ -1,5 +1,10 @@
 # LeaveTrackerPro
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/madhukavirajith/LeaveTrackerPro)
+[![.NET Version](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/)
+[![Language](https://img.shields.io/badge/language-C%23-239120)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![Platform](https://img.shields.io/badge/platform-Windows-0078D4)](https://www.microsoft.com/windows/)
+
 **A simple and efficient leave management system for your organization.**
 
 Manage employee time off, approvals, and leave balances all in one place.
@@ -65,10 +70,11 @@ LeaveTrackerPro is a desktop application that makes it easy for companies to han
 ## What's Inside
 
 ### **Tech Stack**
-- **Built with:** .NET 8 (modern Microsoft framework)
+- **Programming Language:** C# (modern, type-safe language)
+- **Framework:** .NET 8 (modern Microsoft framework)
 - **Database:** SQLite (lightweight, no setup needed)
-- **Interface:** Windows Desktop App (works on Windows 10+)
-- **Desktop Framework:** Windows Forms
+- **UI Framework:** Windows Forms (desktop application)
+- **Platform:** Windows Desktop App (works on Windows 10+)
 
 ---
 
